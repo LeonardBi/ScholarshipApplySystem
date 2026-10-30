@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mentor_page.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Mentor Page</h2>
+    <div class="student-applications">
+        <h3>Student Applications</h3>
+        <ul>
+            {% for application in applications %}
+                <li>
+                    <p><strong>Name:</strong> {{ application.name }}</p>
+                    <p><strong>Gender:</strong> {{ application.gender }}</p>
+                    <p><strong>Birth:</strong> {{ application.birth }}</p>
+                    <p><strong>ID Number:</strong> {{ application.IDnum }}</p>
+                    <p><strong>Student Number:</strong> {{ application.studentNum }}</p>
+                    <p><strong>Faculty:</strong> {{ application.faculty }}</p>
+                    <p><strong>Political Status:</strong> {{ application.politicstatus }}</p>
+                    <p><strong>Nation:</strong> {{ application.nation }}</p>
+                    <p><strong>Time of Enrollment:</strong> {{ application.timeofenrollment }}</p>
+                    <p><strong>Score Ranking:</strong> {{ application.scoreRanking }}</p>
+                    <p><strong>Number of Compulsory Courses:</strong> {{ application.NumberofCompulsoryCourses }}</p>
+                    <p><strong>Passed Number:</strong> {{ application.PassedNum }}</p>
+                    <p><strong>Award Name:</strong> {{ application.AwardName }}</p>
+                    <p><strong>Award Date:</strong> {{ application.AwardDate }}</p>
+                    <p><strong>Apply Date:</strong> {{ application.ApplyDate }}</p>
+                    <p><strong>Apply Reason:</strong> {{ application.ApplyReason }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <form action="{{ url_for('mentor_pass_verification') }}" method="post">
+            <ul>
+                {% for application in applications %}
+                    <li>
+                        <input type="checkbox" name="selected_students" value="{{ application.name }}">
+                        <label>{{ application.name }}</label>
+                    </li>
+                {% endfor %}
+            </ul>
+            <button type="submit">Pass Verification</button>
+        </form>
+    </div>
+
+    <div class="buttons">
+        <button onclick="window.location.href='{{ url_for('mentor_login') }}'">Logout</button>
+    </div>
+</div>
+</body>
+</html>

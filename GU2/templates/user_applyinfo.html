@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_applyinfoStyle.css') }}">
+    <title>User Application Information</title>
+</head>
+<body>
+    <h2>User Application Information</h2>
+    <p><strong>Username:</strong> {{ username }}</p>
+    <p><strong>Name:</strong> {{ application.name }}</p>
+    <p><strong>Gender:</strong> {{ application.gender }}</p>
+    <p><strong>Date of Birth:</strong> {{ application.birth }}</p>
+    <p><strong>ID Number:</strong> {{ application.IDnum }}</p>
+    <p><strong>Student Number:</strong> {{ application.studentNum }}</p>
+    <p><strong>Faculty:</strong> {{ application.faculty }}</p>
+    <p><strong>Political Status:</strong> {{ application.politicstatus }}</p>
+    <p><strong>Nation:</strong> {{ application.nation }}</p>
+    <p><strong>Time of Enrollment:</strong> {{ application.timeofenrollment }}</p>
+    <p><strong>Score Ranking:</strong> {{ application.scoreRanking }}</p>
+    <p><strong>Number of Compulsory Courses:</strong> {{ application.NumberofCompulsoryCourses }}</p>
+    <p><strong>Number of Passed Courses:</strong> {{ application.PassedNum }}</p>
+    <p><strong>Award Name and Date:</strong> {{ application.AwardName }}</p>
+    <p><strong>Apply Date:</strong> {{ application.ApplyDate }}</p>
+    <p><strong>Apply Reason:</strong> {{ application.ApplyReason }}</p>
+    <button onclick="window.location.href='{{ url_for('user_page', username=username) }}'">Back to User Page</button>
+</body>
+</html>

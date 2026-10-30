@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyle.css') }}">
+</head>
+<body>
+    <h2>Welcome to the BUAA Graduate Scholarship Application System</h2>
+    <h3>College Page</h3>
+    <form method="post" action="{{ url_for('college_login') }}">
+        <label for="collegename">Username:</label>
+        <input type="text" id="collegename" name="collegename" required><br>
+
+        <label for="collegepassword">Password:</label>
+        <input type="collegepassword" id="collegepassword" name="collegepassword" required><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <button onclick="window.location.href='{{ url_for('user_login') }}'">User Login</button>
+    <button onclick="window.location.href='{{ url_for('mentor_login') }}'">Mentor Login</button>
+    <button onclick="window.location.href='{{ url_for('faculty_login') }}'">Faculty Login</button>
+    <button onclick="window.location.href='{{ url_for('admin_login') }}'">Admin Login</button>
+</body>
+</html>

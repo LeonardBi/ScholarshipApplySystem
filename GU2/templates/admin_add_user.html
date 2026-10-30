@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_add_user.css') }}">
+    <title>Add User</title>
+    <script>
+        // Function to display the message in an alert and redirect to user_login
+        function displayMessage() {
+            var message = "{{ message }}";
+            if (message && message !== "None") {
+                if (message === 'Registration successful! You can now log in.') {
+                    alert(message);
+                    window.location.href = '{{ url_for('admin_add_user') }}';
+                } else {
+                    alert(message);
+                }
+            }
+        }
+
+        // Function to validate password
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+            displayMessage();
+            return true;
+        }
+    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<h2>Add User</h2>
+
+<form method="post" action="{{ url_for('admin_add_user') }}" onsubmit="return showMessage()">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" id="confirm_password" name="confirm_password" required><br>
+
+    <label for="gender">Gender:</label>
+    <input type="text" id="gender" name="gender" required><br>
+
+    <label for="birth">Birth:</label>
+    <input type="date" id="birth" name="birth" required><br>
+
+    <label for="telephone">Telephone:</label>
+    <input type="text" id="telephone" name="telephone" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="major">Major:</label>
+    <select id="major" name="major" required>
+        <option value="Software Development">Software Development</option>
+        <option value="International Trade">International Trade</option>
+        <option value="Computer Mathematics">Computer Mathematics</option>
+    </select><br>
+
+    <input type="submit" value="Add User">
+</form>
+
+{% if message %}
+    <script>
+        displayMessage();
+    </script>
+{% endif %}
+
+<div class="buttons">
+    <button onclick="window.location.href='{{ url_for('admin_page') }}'">Back to Admin Home</button>
+</div>
+</body>
+</html>

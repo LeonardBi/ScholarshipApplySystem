@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_add_user.css') }}">
+    <title>Delete User</title>
+    <script>
+        function showMessage() {
+            alert('User deleted successfully!');
+            location.reload();
+            return true;
+        }
+    </script>
+
+</head>
+<body>
+<h2>Delete User</h2>
+<form method="post" action="{{ url_for('admin_delete_user') }}" onsubmit="return showMessage()">
+    <label for="username">Select User to Delete:</label>
+    <select id="username" name="username" required>
+        {% for user in user_list %}
+            <option value="{{ user.username }}">{{ user.username }}</option>
+        {% endfor %}
+    </select>
+    <br>
+
+    <input type="submit" value="Delete User">
+</form>
+<br>
+<a href="{{ url_for('admin_page') }}">Back to Admin Home</a>
+</body>
+</html>

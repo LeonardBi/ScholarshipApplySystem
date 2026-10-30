@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_view_users.css') }}">
+</head>
+<body>
+    <h2>View Users</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Gender</th>
+                <th>Birth</th>
+                <th>Telephone</th>
+                <th>Email</th>
+                <th>Major</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.gender }}</td>
+                    <td>{{ user.birth }}</td>
+                    <td>{{ user.telephone }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.major }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="buttons">
+        <button onclick="window.location.href='{{ url_for('admin_page') }}'">Back to Admin Home</button>
+    </div>
+</body>
+</html>

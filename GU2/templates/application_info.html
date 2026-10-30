@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/application_infoStyle.css') }}">
+</head>
+<body>
+<h1>Application Information</h1>
+<ul>
+    <li>
+        Measures for the Administration of National Scholarships for undergraduate students of Beihang University (Revised at the meeting of the School Scholarship Management Committee on June 7, 2022)
+    </li>
+    <li>
+        <strong>Article 1:</strong> The National Scholarship shall be funded by the central Government and shall be used to reward the outstanding students among the full-time college students (including higher vocational colleges and the second bachelor's degree) included in the national enrollment plan, so as to encourage the students to study hard and forge ahead, and develop morally, intellectually, physically, aesthetically and intellectually. According to the Notice of the Ministry of Finance and Education, the Ministry of Human Resources and Social Security, the Ministry of Retired Soldiers, the Central Military Commission, the National Defense Mobilization Department on Issuing the Measures for the Management of Student Financial Assistance Funds (No. 2021) and the Notice of the Ministry of Education and Finance on Issuing the Measures for the Evaluation of National Scholarships for Junior College Students (No. 105), These measures are formulated according to the actual situation of the school.
+    </li>
+    <li>
+        <strong>Article 2:</strong> The National Scholarship shall be used to award outstanding students in the second year or above (including the second year) of full-time undergraduate students in the school.
+    </li>
+    <li>
+        <strong>Article 3:</strong> The award standard for national scholarships shall be 8,000 yuan per person per year.
+    </li>
+    <li>
+        <strong>Article 4:</strong> National Scholarship application Requirements:
+        <ol>
+            <li>Having the nationality of the People's Republic of China;</li>
+            <li>Love the motherland and support the leadership of the Communist Party of China;</li>
+            <li>Abide by the Constitution and laws, and abide by the rules and regulations of the university;</li>
+            <li>Honest and trustworthy, good moral quality;</li>
+            <li>Excellent academic performance in school, especially outstanding in innovation ability, social practice, comprehensive quality and other aspects, and the ranking of academic performance and comprehensive evaluation results in the last academic year are ranked in the top 10% of the whole grade (including 10%).</li>
+        </ol>
+    </li>
+    <li>
+        <strong>Article 5:</strong> The national scholarship shall be evaluated once every academic year. The University shall carry out the evaluation according to the national scholarship quota and budget issued by the Ministry of Education. The evaluation shall be carried out on an equal basis and adhere to the principles of openness, fairness, justice and merit selection.
+    </li>
+    <!-- 添加更多 Article -->
+</ul>
+<form action="{{ url_for('user_page', username=username) }}">
+    <button type="submit">Back to User Page</button>
+</form>
+</body>
+</html>

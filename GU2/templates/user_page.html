@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/userpageStyle.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the BUAA Graduate Scholarship Application System</h2>
+        <h3>User Page</h3>
+
+        <div class="user-info">
+            <p>Username: {{ username }}</p>
+            <p>Password: {{ password }}</p>
+            <p>Gender: {{ gender }}</p>
+            <p>Birth: {{ birth }}</p>
+            <p>Telephone: {{ telephone }}</p>
+            <p>Email: {{ email }}</p>
+            <p>Major: {{ major }}</p>
+        </div>
+
+        <div class="buttons">
+            <button onclick="window.location.href='{{ url_for('user_login') }}'">Back to Login</button>
+            <button onclick="window.location.href='{{ url_for('user_apply', username=username) }}'">Apply</button>
+            <button onclick="window.location.href='{{ url_for('application_status') }}?username={{ username }}'">Application Status</button>
+            <button onclick="window.location.href='{{ url_for('user_applyinfo', username=username) }}'">Check Application Information</button>
+            <button onclick="window.location.href='{{ url_for('application_info', username=username) }}'">View Application Standard</button>
+        </div>
+    </div>
+</body>
+</html>

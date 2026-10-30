@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Application Status</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/application_status.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Scholarship Application Status</h2>
+
+        <div class="central-box">
+            <p>Application Status: {{ application_status }}</p>
+        </div>
+
+        <div class="buttons">
+            <button onclick="window.location.href='{{ url_for('user_page', username=username) }}'">Back to User Page</button>
+        </div>
+    </div>
+</body>
+</html>

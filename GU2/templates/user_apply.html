@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_applyStyle.css') }}">
+</head>
+<body>
+    <h2>User Application Form</h2>
+    <form method="post" action="{{ url_for('user_apply', username=username) }}">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" required><br>
+
+        <label for="birth">Date of Birth:</label>
+        <input type="date" id="birth" name="birth" required><br>
+
+        <label for="IDnum">ID Number:</label>
+        <input type="text" id="IDnum" name="IDnum" required><br>
+
+        <label for="studentNum">Student Number:</label>
+        <input type="text" id="studentNum" name="studentNum" required><br>
+
+        <label for="faculty">Faculty:</label>
+        <input type="text" id="faculty" name="faculty" required><br>
+
+        <label for="politicstatus">Political Status:</label>
+        <input type="text" id="politicstatus" name="politicstatus" required><br>
+
+        <label for="nation">Nation:</label>
+        <input type="text" id="nation" name="nation" required><br>
+
+        <label for="timeofenrollment">Time of Enrollment:</label>
+        <input type="date" id="timeofenrollment" name="timeofenrollment" required><br>
+
+        <label for="scoreRanking">Score Ranking:</label>
+        <input type="number" id="scoreRanking" name="scoreRanking" required><br>
+
+        <label for="NumberofCompulsoryCourses">Number of Compulsory Courses:</label>
+        <input type="text" id="NumberofCompulsoryCourses" name="NumberofCompulsoryCourses" required><br>
+
+        <label for="PassedNum">Number of Passed Courses:</label>
+        <input type="text" id="PassedNum" name="PassedNum" required><br>
+
+        <label for="AwardName">Award Name and Dare:</label>
+        <textarea id="AwardName" name="AwardName" rows="4" cols="50"></textarea><br>
+
+        <label for="ApplyReason">Apply Reason:</label><br>
+        <textarea id="ApplyReason" name="ApplyReason" rows="4" cols="50" required></textarea><br>
+
+        <input type="submit" value="Apply">
+    </form>
+</body>
+</html>

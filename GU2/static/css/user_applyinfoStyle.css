@@ -1,0 +1,36 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center align text */
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    color: #555;
+    margin: 5px 0;
+}
+
+strong {
+    color: #333;
+}
+
+button {
+    width: 150px;
+    padding: 8px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #3498db; /* Blue color */
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue color on hover */
+}

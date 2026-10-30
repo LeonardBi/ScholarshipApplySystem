@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyle.css') }}">
+    <script>
+        {% if error_message %}
+            window.onload = function() {
+                alert("{{ error_message }}");
+            };
+        {% endif %}
+    </script>
+</head>
+<body>
+    <h2>Welcome to the BUAA Graduate Scholarship Application System</h2>
+    <h3>User Page</h3>
+
+    <form method="post" action="{{ url_for('user_login') }}">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <button onclick="window.location.href='{{ url_for('mentor_login') }}'">Mentor Login</button>
+    <button onclick="window.location.href='{{ url_for('faculty_login') }}'">Faculty Login</button>
+    <button onclick="window.location.href='{{ url_for('college_login') }}'">College Login</button>
+    <button onclick="window.location.href='{{ url_for('admin_login') }}'">Admin Login</button>
+    <div class="link-container">
+        <a href="{{ url_for('user_register') }}">Sign Up For Us!</a>
+    </div>
+</body>
+</html>

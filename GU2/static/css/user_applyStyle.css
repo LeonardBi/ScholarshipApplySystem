@@ -1,0 +1,57 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center align text */
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+    width: 100%;
+    max-width: 300px; /* Adjust max-width as needed */
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+textarea {
+    height: 100px; /* Adjust textarea height */
+}
+
+input[type="submit"] {
+    max-width: 300px; /* Adjust max-width as needed */
+    background-color: #4caf50; /* Green color */
+    color: #fff;
+    cursor: pointer;
+    margin: 0 auto 10px; /* Center and add margin-bottom */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}

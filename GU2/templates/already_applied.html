@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Already Applied</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/already_appliedStyle.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>You have already applied.</h2>
+        <p>Do you want to edit your information?</p>
+        <div class="buttons">
+            <button onclick="window.location.href='{{ url_for('user_page', username=username) }}'">Back to User Page</button>
+            <button onclick="window.location.href='{{ url_for('apply_update', username=username) }}'">Update Information</button>
+        </div>
+    </div>
+</body>
+</html>
